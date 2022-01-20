@@ -1,0 +1,21 @@
+default: &default
+  username: postgres
+  password: postgres
+  host: localhost
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: fetchsamurais_development
+
+test:
+  <<: *default
+  database: fetchsamurais_test
+
+production:
+  <<: *default
+  database: fetchsamurais_production
+  username: fetchsamurais
+  password: <%= ENV["FETCHSAMURAIS_DATABASE_PASSWORD"] %>
