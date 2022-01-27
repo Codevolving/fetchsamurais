@@ -1,0 +1,12 @@
+# See https://docs.rubocop.org/rubocop/configuration
+require:
+  - rubocop-rspec
+  - rubocop-rails
+
+AllCops:
+  NewCops: enable
+
+RSpec/FactoryBot/CreateList:
+  Include:
+    - 'spec/factories.rb'
+    - 'spec/factories/**/*.rb'
