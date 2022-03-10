@@ -3,7 +3,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.0.3'
+ruby '~> 3.0'
 
 gem 'bootsnap', require: false
 gem 'pg', '~> 1.1'
@@ -21,4 +21,8 @@ group :development do
   gem 'rubocop', '~> 1.25.0', require: false
   gem 'rubocop-rails', '~> 2.13.0', require: false
   gem 'rubocop-rspec', '~> 1.25.0', require: false
+end
+
+group :test do
+  gem 'shoulda-matchers', '~> 5.0'
 end
