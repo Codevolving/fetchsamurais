@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  postgres:
+    image: postgres:14-bullseye
+    restart: "always"
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_PASSWORD=youwillneverguess
+      - POSTGRES_USER=fetchsamurais_dev
+      - POSTGRES_DB=fetchsamurais_development
+
+  fetchsamurais:
+    build: .
+    volumes:
+      - .:/app
+    environment:
+      - DB_PASSWORD=youwillneverguess
+      - DB_USER=fetchsamurais_dev
+      - DB_HOST=postgres
+    ports:
+      - 3000:3000
+    depends_on:
+      - postgres
