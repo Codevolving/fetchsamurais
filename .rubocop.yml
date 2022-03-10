@@ -10,3 +10,6 @@ RSpec/FactoryBot/CreateList:
   Include:
     - 'spec/factories.rb'
     - 'spec/factories/**/*.rb'
+
+Style/Documentation:
+  Enabled: false 
